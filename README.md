@@ -46,9 +46,10 @@ module.exports = React.createClass({
 
     return (<View style={{backgroundColor: 'orange',flex:1, flexDirection: 'row'}}>
       <View style={{ flex: 1, top:200, left: 20}}>
-        <CircularProgressDisplay.Hollow size={200}  progressBarWidth={20} outlineWidth={0} outlineColor={'black'}
-                                        backgroundColor={'orange'} progressBarColor={'#02BAF7'} innerComponent={innerDisplay}
-                                        rotate={((progress/100)*360)}/>
+        <CircularProgressDisplay.Hollow size={200}
+        progressBarWidth={20} outlineWidth={0} outlineColor={'black'}
+        backgroundColor={'orange'} progressBarColor={'#02BAF7'}
+        innerComponent={innerDisplay} rotate={((progress/100)*360)}/>
       </View>
     </View>);
 
