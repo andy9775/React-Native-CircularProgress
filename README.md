@@ -1,17 +1,21 @@
 ## React-Native-CircularProgress
-A pure React Native Component for circular progress bars.
+A pure React Native Component for circular progress bars for both iOS and Android.
 
 ## Demo
 
 <a href="https://github.com/andy9775/React-Native-CircularProgress/blob/master/demo.gif">
 <img src="https://github.com/andy9775/React-Native-CircularProgress/raw/master/demo.gif" width="350"></a>
 
+## Installation
+1. Install library `npm i --save react-native-progress-circular`
+2. Include in your project `var CircularProgressDisplay = require('react-native-progress-circular');`
 ## Basic Usage
 
 ```javascript
 
 'use strict';
 var React = require('react-native');
+var CircularProgressDisplay = require('react-native-progress-circular');
 var {View, Text} = React;
 
 module.exports = React.createClass({
