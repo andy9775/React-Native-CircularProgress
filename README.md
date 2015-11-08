@@ -9,6 +9,8 @@ A pure React Native Component for circular progress bars for both iOS and Androi
 ## Installation
 1. Install library `npm i --save react-native-progress-circular`
 2. Include in your project `var CircularProgressDisplay = require('react-native-progress-circular');`
+
+
 ## Basic Usage
 
 ```javascript
