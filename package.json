@@ -1,6 +1,6 @@
 {
-  "name": "React-Native-CircularProgress",
-  "version": "0.0.1",
+  "name": "react-native-progress-circular",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {

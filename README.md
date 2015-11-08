@@ -3,7 +3,8 @@ A pure React Native Component for circular progress bars.
 
 ## Demo
 
-<a href="https://github.com/andy9775/React-Native-CircularProgress/blob/master/demo.gif"><img src="https://github.com/andy9775/React-Native-CircularProgress/blob/master/demo.gif" width="350"></a>
+<a href="https://github.com/andy9775/React-Native-CircularProgress/blob/master/demo.gif">
+<img src="https://github.com/andy9775/React-Native-CircularProgress/raw/master/demo.gif" width="350"></a>
 
 ## Basic Usage
 
