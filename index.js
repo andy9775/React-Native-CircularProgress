@@ -60,7 +60,7 @@ var Filled = React.createClass({
       </View>);
 
     return (
-      <View style={{width: size, height: size, overflow:1, borderRadius: size/2}}>
+      <View style={{width: size, height: size, overflow: 'hidden', borderRadius: size/2}}>
         {leftProgressDisplay}
         {rightProgressDisplay}
       </View>
@@ -151,7 +151,7 @@ var Hollow = React.createClass({
     var innerView = this.props.innerComponent ? (
       <View style={{width: size - progressBarWidth*2, height: size - progressBarWidth*2,
         borderRadius: (size - progressBarWidth*2)/2,
-        overflow: 'visible', backgroundColor: 'transparent',
+        overflow: 'hidden', backgroundColor: 'transparent',
         position: 'absolute', left: progressBarWidth, top: progressBarWidth,
         justifyContent: 'center', alignItems:'center'}}>
         {this.props.innerComponent}
@@ -166,7 +166,7 @@ var Hollow = React.createClass({
     }
     return (
       <View
-        style={{width: size + (outlineWidth * 2), height: size + (outlineWidth * 2), overflow: 'visible',
+        style={{width: size + (outlineWidth * 2), height: size + (outlineWidth * 2), overflow: 'hidden',
         borderRadius: (size + (outlineWidth * 2))/2, borderWidth: outlineWidth, borderColor: outlineColor}}>
         {views}
         {innerView}
