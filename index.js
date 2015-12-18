@@ -60,7 +60,7 @@ var Filled = React.createClass({
       </View>);
 
     return (
-      <View style={{width: size, height: size, overflow:1, borderRadius: size/2}}>
+      <View style={{width: size, height: size, overflow: 'hidden', borderRadius: size/2}}>
         {leftProgressDisplay}
         {rightProgressDisplay}
       </View>
@@ -77,7 +77,7 @@ var Hollow = React.createClass({
     outlineWidth: React.PropTypes.number,
     outlineColor: React.PropTypes.string,
     rotate: React.PropTypes.number,
-    innerComponent: React.PropTypes.component
+    innerComponent: React.PropTypes.element
   },
   render(){
     var rotateValue = this.props.rotate >= 360 ? 360 : this.props.rotate;
@@ -96,21 +96,26 @@ var Hollow = React.createClass({
       leftRotate = rotateValue - 180;
     }
     var leftProgressBar = (
-      <View style={{width: size, height: size, backgroundColor: 'transparent', position: 'absolute'}}>
+      <View
+        style={{width: size, height: size, backgroundColor: 'transparent', position: 'absolute'}}
+        key="leftProgressBar"
+      >
         <View style={{width: size/2, height: size, position: 'absolute',
         borderBottomLeftRadius: size/2, borderTopLeftRadius: size/2,
         borderRightWidth: 0,backgroundColor: backgroundColor,
         borderTopWidth: progressBarWidth, borderBottomWidth: progressBarWidth, borderLeftWidth: progressBarWidth,
         borderLeftColor: progressBarColor, borderTopColor: progressBarColor, borderBottomColor: progressBarColor}}/>
 
-        <View style={{width: size/2, height: size, left: size/2,
+          <View style={{width: size/2, height: size, left: size/2,
         position: 'absolute', backgroundColor: backgroundColor}}/>
       </View>
-
     );
 
     var rightProgressBar = (
-      <View style={{width: size, height: size, backgroundColor: 'transparent', position: 'absolute'}}>
+      <View
+        style={{width: size, height: size, backgroundColor: 'transparent', position: 'absolute'}}
+        key="rightProgressBar"
+      >
         <View style={{width: size/2, height: size, position: 'absolute', backgroundColor: 'transparent'}}/>
 
         <View style={{width: size/2, height: size, position: 'absolute', left: size/2,
@@ -123,7 +128,9 @@ var Hollow = React.createClass({
 
     var leftProgressOverlay = (
       <View style={{width: size, height: size,position: 'absolute', backgroundColor: 'transparent',
-        transform: [{rotate: leftRotate + 'deg'}]}}>
+      transform: [{rotate: leftRotate + 'deg'}]}}
+            key="leftProgressOverlay"
+      >
         <View style={{width: size/2, height: size, position: 'absolute', backgroundColor: backgroundColor}}/>
         <View
           style={{width: size/2, height: size, position: 'absolute', backgroundColor: 'transparent', left: size/2}}/>
@@ -132,7 +139,9 @@ var Hollow = React.createClass({
 
     var rightProgressOverlay = (
       <View style={{width: size, height: size, position: 'absolute', backgroundColor: 'transparent',
-        transform: [{rotate: rightRotate + 'deg'}]}}>
+      transform: [{rotate: rightRotate + 'deg'}]}}
+          key="rightProgressOverlay"
+      >
         <View style={{width: size/2, height: size, position: 'absolute', backgroundColor: 'transparent'}}/>
         <View
           style={{width: size/2, height: size, position: 'absolute', backgroundColor: backgroundColor, left: size/2}}/>
@@ -142,7 +151,7 @@ var Hollow = React.createClass({
     var innerView = this.props.innerComponent ? (
       <View style={{width: size - progressBarWidth*2, height: size - progressBarWidth*2,
         borderRadius: (size - progressBarWidth*2)/2,
-        overflow:1, backgroundColor: 'transparent',
+        overflow: 'hidden', backgroundColor: 'transparent',
         position: 'absolute', left: progressBarWidth, top: progressBarWidth,
         justifyContent: 'center', alignItems:'center'}}>
         {this.props.innerComponent}
@@ -157,7 +166,7 @@ var Hollow = React.createClass({
     }
     return (
       <View
-        style={{width: size + (outlineWidth * 2), height: size + (outlineWidth * 2), overflow:1,
+        style={{width: size + (outlineWidth * 2), height: size + (outlineWidth * 2), overflow: 'hidden',
         borderRadius: (size + (outlineWidth * 2))/2, borderWidth: outlineWidth, borderColor: outlineColor}}>
         {views}
         {innerView}
