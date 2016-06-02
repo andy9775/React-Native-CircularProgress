@@ -3,9 +3,8 @@
  */
 'use strict';
 
-var React = require('react-native');
-
-var {View} = React;
+import React, { Component } from 'react';
+import {View} from 'react-native';
 
 var Filled = React.createClass({
   propTypes: {
