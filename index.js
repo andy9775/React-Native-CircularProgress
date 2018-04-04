@@ -5,13 +5,14 @@
 
 import React, { Component } from 'react';
 import {View} from 'react-native';
+import PropTypes from 'prop-types';
 
 var Filled = React.createClass({
   propTypes: {
-    size: React.PropTypes.number,
-    rotate: React.PropTypes.number,
-    componentColor: React.PropTypes.string,
-    progressColor: React.PropTypes.string
+    size: PropTypes.number,
+    rotate: PropTypes.number,
+    componentColor: PropTypes.string,
+    progressColor: PropTypes.string
   },
 
   render() {
