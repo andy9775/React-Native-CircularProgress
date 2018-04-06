@@ -5,14 +5,9 @@
 
 import React, { Component } from 'react';
 import {View} from 'react-native';
+import PropTypes from 'prop-types';
 
-var Filled = React.createClass({
-  propTypes: {
-    size: React.PropTypes.number,
-    rotate: React.PropTypes.number,
-    componentColor: React.PropTypes.string,
-    progressColor: React.PropTypes.string
-  },
+class Filled extends Component {
 
   render() {
     var size = this.props.size,
@@ -65,19 +60,17 @@ var Filled = React.createClass({
       </View>
     );
   }
-});
+}
 
-var Hollow = React.createClass({
-  propTypes: {
-    size: React.PropTypes.number,
-    progressBarWidth: React.PropTypes.number,
-    backgroundColor: React.PropTypes.string,
-    progressBarColor: React.PropTypes.string,
-    outlineWidth: React.PropTypes.number,
-    outlineColor: React.PropTypes.string,
-    rotate: React.PropTypes.number,
-    innerComponent: React.PropTypes.element
-  },
+Filled.propTypes = {
+  size: PropTypes.number,
+  rotate: PropTypes.number,
+  componentColor: PropTypes.string,
+  progressColor: PropTypes.string
+}
+
+class Hollow extends Component {
+
   render(){
     var rotateValue = this.props.rotate >= 360 ? 360 : this.props.rotate;
 
@@ -172,6 +165,17 @@ var Hollow = React.createClass({
       </View>
     );
   }
-});
+}
+
+Hollow.propTypes = {
+  size: PropTypes.number,
+  progressBarWidth: PropTypes.number,
+  backgroundColor: PropTypes.string,
+  progressBarColor: PropTypes.string,
+  outlineWidth: PropTypes.number,
+  outlineColor: PropTypes.string,
+  rotate: PropTypes.number,
+  innerComponent: PropTypes.element
+}
 
 module.exports = {Hollow, Filled};
